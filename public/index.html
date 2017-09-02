@@ -19,7 +19,8 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-
+    <link href="https://unpkg.com/normalize.css@^4.1.1" rel="stylesheet" />
+    <link href="https://unpkg.com/@blueprintjs/core@^1.11.0/dist/blueprint.css" rel="stylesheet" />
 
     <title>React App</title>
   </head>
@@ -39,19 +40,30 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDE3ZtuygEHl_hEOAJG8kM0pcLRdsBKP_s",
-        authDomain: "testdl-fb.firebaseapp.com",
-        databaseURL: "https://testdl-fb.firebaseio.com",
-        projectId: "testdl-fb",
-        storageBucket: "testdl-fb.appspot.com",
-        messagingSenderId: "867302334737"
-      };
-      firebase.initializeApp(config);
-    </script>
-    
+
+
   </body>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script>
+
+    // Initialize Firebase
+
+    firebase.initializeApp({
+      apiKey: "AIzaSyDE3ZtuygEHl_hEOAJG8kM0pcLRdsBKP_s",
+      authDomain: "testdl-fb.firebaseapp.com",
+      databaseURL: "https://testdl-fb.firebaseio.com",
+      projectId: "testdl-fb",
+      storageBucket: "testdl-fb.appspot.com",
+      messagingSenderId: "867302334737"
+    });
+
+    var ref = firebase.database().ref('users/0');
+
+    ref.on("value", function(snapshot){
+
+        console.log(snapshot.val())
+
+    });
+
+  </script>
 </html>

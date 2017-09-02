@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App';
+import App from './containers/App';
+import PlayGr from './containers/PlayGr';
+
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<div><App />dsdsd<PlayGr /></div>, document.getElementById('root'));
 registerServiceWorker();

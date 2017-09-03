@@ -6,5 +6,5 @@ import PlayGr from './containers/PlayGr';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<div><App />dsdsd<PlayGr /></div>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

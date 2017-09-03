@@ -1,0 +1,86 @@
+
+.border {
+  border: 2px solid red;
+}
+
+.App {
+  composes: border from '../App/index.css';
+  composes: border;
+  text-align: right;
+  color:red;
+}
+
+
+  .App-header {
+    background-color: #222;
+    height: 60px;
+    padding: 20px;
+    color: white;
+  }
+
+
+
+  .header {
+    color: green;
+  }
+
+  .global-class-ept :local .header {
+    color: blue;
+  }
+
+  .App-intro {
+    font-size: large;
+  }
+
+
+.root {
+  border: 1px solid;
+  font-family: inherit;
+  font-size: 12px;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 3px;
+  text-align: center;
+}
+
+
+@mixin button($bg-color, $font-color) {
+  background: $bg-color;
+  color: $font-color;
+  border-color: $font-color;
+
+  &:focus {
+    border-color: $font-color;
+    background: $bg-color;
+    color: $font-color;
+  }
+
+  &:hover {
+    color: $font-color;
+    background: lighten($bg-color, 20%);
+  }
+
+  &:active {
+    background: lighten($bg-color, 30%);
+    top: 2px;
+  }
+}
+
+.primary {
+  @include button($color-primary, $color-white)
+}
+
+:local(.secondary) {
+  @include button($color-white, $color-primary)
+}

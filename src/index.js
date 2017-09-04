@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './containers/App';
-import PlayGr from './containers/PlayGr';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import registerServiceWorker from './registerServiceWorker'
 
-import registerServiceWorker from './registerServiceWorker';
+import App from './containers/App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import './index.css'
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+registerServiceWorker()

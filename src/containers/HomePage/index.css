@@ -1,37 +1,13 @@
+.button  {
+  border-color: black;
 
-.border {
-  border: 2px solid red;
+  &:hover {
+    border-color: red;
+  }
 }
-
-.App {
-  composes: border from '../App/index.css';
-  composes: border;
-  text-align: right;
-  color:red;
+.button:hover {
+  border-color: red;
 }
-
-
-  .App-header {
-    background-color: #222;
-    height: 60px;
-    padding: 20px;
-    color: white;
-  }
-
-
-
-  .header {
-    color: green;
-  }
-
-  .global-class-ept :local .header {
-    color: blue;
-  }
-
-  .App-intro {
-    font-size: large;
-  }
-
 
 .root {
   border: 1px solid;

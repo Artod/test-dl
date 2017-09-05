@@ -20,13 +20,14 @@ class User extends Component {
     this.onClickEnd = this.onClickEnd.bind(this)
   }
 
-
+  static propTypes = {
+    data: PropTypes.object.isRequired
+  }
 
   onClickTarif() {
     this.setState({tarifOnEdit: true })
       console.dir(this.state)
   }
-
 
   onBlurTarif() {
     this.setState( { tarifOnEdit: false })
@@ -49,7 +50,7 @@ class User extends Component {
   }
 
   render() {
-    const user = this.props.data
+    const {data: user, onChangeBuilding, onChangeActive, onDelete} = this.props
 
     return (
       <tr>
@@ -62,7 +63,7 @@ class User extends Component {
             <select
               ref={input => input && input.focus()}
               value={user.building}
-              onChange={this.props.onChangeBuilding}
+              onChange={onChangeBuilding}
               onBlur={this.onBlurChangeBuild.bind(this)}
             >
             {
@@ -85,16 +86,13 @@ class User extends Component {
         <td onClick={this.onClickEnd}>{user.end}</td>
         <td>${user.debt}</td>
         <td>
-          <input type="checkbox" value="checked" checked={user.active} onChange={this.props.onChangeActive} />
+          <input type="checkbox" value="checked" checked={user.active} onChange={onChangeActive} />
         </td>
-        <td><button onClick={this.props.onDelete}>Delete</button></td>
+        <td><button onClick={onDelete}>Delete</button></td>
       </tr>
     )
   }
 }
 
-User.propTypes = {
-  data: PropTypes.object.isRequired
-}
 
 export default User
